@@ -15,6 +15,14 @@ gem "sqlite3", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+gem 'bcrypt', '~> 3.1.7'
+
+gem "importmap-rails" #ESMとimportmapを使用して、トランスパイルやバンドルなしでRailsのモダンなJavaScriptを管理
+
+gem "turbo-rails" #JavaScriptを一切記述することなく、シングルページのWebアプリケーションのようなスピードを実現
+
+gem "stimulus-rails" #あなたがすでに持っているHTMLのための控えめなJavaScriptフレームワーク
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
