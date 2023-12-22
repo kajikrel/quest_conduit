@@ -1,0 +1,50 @@
+
+ <% if logged_in? %>
+ <nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">conduit</a>
+    <ul class="nav navbar-nav pull-xs-right">
+      <li class="nav-item">
+        <!-- Add "active" class when you're on that page" -->
+        <a class="nav-link active" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to new_article_path, class: 'nav-link' do %>
+  <i class="ion-compose"></i>&nbsp;New Article
+      <% end %>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/settings"> <i class="ion-gear-a"></i>&nbsp;Settings </a>
+      </li>
+      <li class="nav-item">
+       <%= link_to current_user.name, user_path(current_user), class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "Log out", logout_path,
+                                       data: { "turbo-method": :delete },class: 'nav-link'%>
+        </li>
+    </ul>
+  </div>
+</nav>
+<% else %>
+  
+<nav class="navbar navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">conduit</a>
+    <ul class="nav navbar-nav pull-xs-right">
+      <li class="nav-item">
+        <!-- Add "active" class when you're on that page" -->
+        <a class="nav-link active" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sign up', signup_path, class: 'nav-link' %>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+<% end %>

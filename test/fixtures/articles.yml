@@ -1,0 +1,5 @@
+one:
+  title: "MyString"
+  description: "MyText"
+  body: "MyText"
+  user: one

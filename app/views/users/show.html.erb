@@ -1,0 +1,92 @@
+
+
+
+
+
+<div class="profile-page">
+  <div class="user-info">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 offset-md-1">
+          <%= gravatar_for @user %>
+          <h4><%= @user.name %></h4>
+          <p>
+            Cofounder @GoThinkster, lived in Aol's HQ for a few months, kinda looks like Peeta from
+            the Hunger Games
+          </p>
+          <button class="btn btn-sm btn-outline-secondary action-btn">
+            <i class="ion-plus-round"></i>
+            &nbsp; Follow Eric Simons
+          </button>
+          <button class="btn btn-sm btn-outline-secondary action-btn">
+            <i class="ion-gear-a"></i>
+            &nbsp; Edit Profile Settings
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-10 offset-md-1">
+        <div class="articles-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a class="nav-link active" href="">My Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Favorited Articles</a>
+            </li>
+          </ul>
+        </div>
+     <%# ここからArticleのまとまり %>
+<% @articles.each do |article| %>
+  <div class="article-preview">
+    <div class="article-meta">
+      <%= link_to gravatar_for(@user), user_path(current_user) %>
+
+      <div class="info">
+        <%= link_to current_user.name, user_path(current_user), class: 'author' %>
+        <span class="date"><%= article.created_at.strftime("%B %d, %Y") %></span>
+      </div>
+      <button class="btn btn-outline-primary btn-sm pull-xs-right">
+        <i class="ion-heart"></i> 29
+      </button>
+    </div>
+    
+   <%= link_to article_path(article), class: "preview-link" do %>
+     
+        <h1><%= article.title %></h1>
+        <p><%= article.description %></p>
+        <span>Read more...</span>
+        <!-- ここに記事のタグを表示するためのコードを追加 -->
+         <ul class="tag-list">
+              <li class="tag-default tag-pill tag-outline">realworld</li>
+              <li class="tag-default tag-pill tag-outline">implementations</li>
+            </ul>
+      </a>
+    <% end %>
+  </div>
+<% end %>
+<%# ここまで %>
+
+
+
+
+        
+
+       
+
+        <ul class="pagination">
+          <li class="page-item active">
+            <a class="page-link" href="">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="">2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
