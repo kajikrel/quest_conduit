@@ -72,6 +72,8 @@ GEM
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -89,6 +91,8 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     erubi (1.12.0)
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -211,6 +215,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -221,8 +226,10 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
+  bootstrap-will_paginate (= 1.0.0)
   capybara
   debug
+  faker (= 2.21.0)
   importmap-rails
   jbuilder
   puma (~> 5.0)
@@ -235,6 +242,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  will_paginate (= 3.3.1)
 
 RUBY VERSION
    ruby 3.2.2p53
